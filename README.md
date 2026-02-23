@@ -1,97 +1,110 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 🌾 RécolteCheck - Gestion des parcelles et des récoltes
 
-# Getting Started
+- **👤 Assigné par :** Zakaria Ziane
+- **📅 Créé le :** 23/02/26
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+> RécolteCheck est une application mobile développée avec React Native et Firebase permettant aux agriculteurs de gérer leurs parcelles et de suivre leurs récoltes de manière simple et centralisée.
 
-## Step 1: Start Metro
+**Technologies :** 🤖 Android | 📜 JavaScript | 🍎 iOS | ⚛️ React
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+---
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+## 💼 Situation professionnelle
+Création d'une application mobile multiplateforme avec React Native.
 
-```sh
-# Using npm
-npm start
+## 🎯 Besoin visé ou problème rencontré
+Créer des applications mobiles uniques et performantes capables de fonctionner sur Android et iOS avec une seule base de code. Réagir rapidement aux évolutions du marché tout en réduisant les coûts et le temps de développement grâce à React Native, une technologie qui offre à la fois efficacité et polyvalence. L’ambition est claire : dominer le terrain des applications cross-platform et se positionner en tant qu’expert incontournable.
 
-# OR using Yarn
-yarn start
-```
+## 📚 Compétences visées
 
-## Step 2: Build and run your app
+### Organisation du travail
+- **C1.** Planifier le travail à effectuer individuellement ![Niveau 3](https://img.shields.io/badge/Niveau-3-blue?style=plastic)
+- **C2.** Contribuer au pilotage de l’organisation du travail individuel et collectif ![Niveau 3](https://img.shields.io/badge/Niveau-3-blue?style=plastic)
+### Recherche et résolution
+- **C3.** Rechercher de façon méthodique une ou des solutions au problème rencontré ![Niveau 3](https://img.shields.io/badge/Niveau-3-blue?style=plastic)
+### Partage et documentation
+- **C4.** Partager la solution adoptée en utilisant les moyens de partage de connaissance ou de documentation disponibles ![Niveau 3](https://img.shields.io/badge/Niveau-3-blue?style=plastic)
+### Présentation
+- **C5.** Présenter un travail réalisé en synthétisant ses résultats, sa démarche ![Niveau 3](https://img.shields.io/badge/Niveau-3-blue?style=plastic)
+### Environnement technique
+- **C6.** Installer et configurer son environnement de travail en fonction du projet ![Niveau 2](https://img.shields.io/badge/Niveau-2-green?style=plastic)
+### Développement
+- **C7.** Développer des interfaces utilisateur ![Niveau 2](https://img.shields.io/badge/Niveau-2-green?style=plastic)
+- **C12.** Développer des composants d'accès aux données ![Niveau 2](https://img.shields.io/badge/Niveau-2-green?style=plastic)
+### Gestion de projet
+- **C8.** Contribuer à la gestion d’un projet ![Niveau 2](https://img.shields.io/badge/Niveau-2-green?style=plastic)
+### Conception et données
+- **C9.** Analyser les besoins et maquetter une application ![Niveau 2](https://img.shields.io/badge/Niveau-2-green?style=plastic)
+- **C10.** Définir l’architecture logicielle d’une application ![Niveau 2](https://img.shields.io/badge/Niveau-2-green?style=plastic)
+- **C11.** Concevoir et mettre en place une base de données ![Niveau 2](https://img.shields.io/badge/Niveau-2-green?style=plastic)
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
 
-### Android
+## 📋 Contexte du projet
+Le secteur agricole repose encore largement sur des méthodes traditionnelles de gestion (cahiers papier, notes informelles, mémoire personnelle), ce qui complique le suivi précis des parcelles, des cultures et des récoltes. Cette organisation peut entraîner une perte d’informations, un manque de visibilité sur la production et des difficultés dans la planification des interventions agricoles.
 
-```sh
-# Using npm
-npm run android
+Avec la démocratisation des smartphones, même en milieu rural, il devient possible de proposer une solution mobile simple et accessible permettant aux agriculteurs de digitaliser la gestion de leurs activités.
 
-# OR using Yarn
-yarn android
-```
+Le projet vise donc à développer une application mobile intuitive permettant :
 
-### iOS
+- 👨‍🌾 La gestion des agriculteurs et de leurs parcelles
+- 🌱 Le suivi des cultures associées à chaque parcelle
+L’enregistrement et l’historique des récoltes
+- ☁️ La centralisation et la synchronisation des données via le cloud
+L’objectif est de fournir une application fonctionnelle, utilisable sur Android et iOS, avec une interface adaptée à des utilisateurs peu technophiles.
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+Cette solution permettra d’améliorer :
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+- 📊 La traçabilité des récoltes
+- 👁️ La visibilité sur la production
+L’organisation des interventions agricoles
+- 📈 La prise de décision basée sur des données réelles
 
-```sh
-bundle install
-```
+---
 
-Then, and every time you update your native dependencies, run:
+## ⚙️ Fonctionnalités
+- 🔐 **Authentification** en utilisant Firebase Authentication.
+- 👤 Il existe un seul type de profil "Agriculteur"
+- 📝 Chaque agriculteur gére ses informations personnelles.
+- 🗺️ **Gestion des Parcelles** : Organisation des terrains agricoles (surfaces, cultures, période de récolte, poids des récoltes).
+- 🌾 **Suivi des récoltes** : Enregistrer et suivre la production par zone appartenant à une parcelle.
 
-```sh
-bundle exec pod install
-```
+---
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+## 📖 Modalités pédagogiques
+- 👤 Travail individuel
+- ⏰ **Deadline :** 6 Mars 2026.
 
-```sh
-# Using npm
-npm run ios
+---
 
-# OR using Yarn
-yarn ios
-```
+## 📝 Modalités d'évaluation
+Une durée de **25 min** organisée comme suit :
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+| Durée | Activité |
+|-------|----------|
+| 5 min | Démontrer le contenu et les fonctionnalités d'application mobile |
+| 5 min | Montrez le code source et expliquez brièvement comment il fonctionne |
+| 10 min | Mise en situation |
+| 5 min | Code Review |
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+---
 
-## Step 3: Modify your app
+## 📦 Livrables
+- Lien GitHub de l’application
+- Code clair, modulaire et bien commenté
+- Description de l’architecture de l’application
+- Guide d’installation et de configuration
+- Liste des dépendances externes utilisées et leur rôle
+- Application démarrée sur un émulateur ou sur un téléphone.
+- Planification Jira
+- Lien Firebase avec accès, ainsi que l’architecture adoptée pour la schématisation
+---
 
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+## ✅ Critères de performance
+- Structure et organisation du projet
+- Nommage cohérent des dossiers et fichiers
+- Clarté et lisibilité du code
+- Respect des principes **DRY** (éviter les répétitions)
+- Respect du **SRP** (Single Responsibility Principle)
+- Nommage explicite des fonctions et variables
+- Validation efficace des entrées (données utilisateur)
+- Gestion robuste des erreurs (*Error Handling*)
