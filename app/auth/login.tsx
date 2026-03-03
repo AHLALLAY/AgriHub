@@ -1,5 +1,6 @@
-import { authStyles } from "@/constants/authStyles";
-import { Link } from "expo-router";
+import { auth } from "../../config/firebaseConfig";
+import { authStyles } from "../../constants/authStyles";
+import { Link, router } from "expo-router";
 import { useState } from "react";
 import {
   KeyboardAvoidingView,
@@ -10,14 +11,39 @@ import {
   ScrollView,
   Platform,
 } from "react-native";
+import { validateEmail, validatePassword } from "../../utils/validation";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 export default function LoginScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("null");
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleLogin = async () => {};
+  const handleLogin = async () => {
+    setError("");
+    const emailError = validateEmail(email);
+    if (emailError) {
+      setError(emailError);
+      return;
+    }
+    const passwordError = validatePassword(password);
+    if (passwordError) {
+      setError(passwordError);
+      return;
+    }
+    setLoading(true);
+    try {
+      const user = (await signInWithEmailAndPassword(auth, email, password))
+        .user;
+      console.log("utilisateur connecter : ", user.uid);
+      router.replace("/(main)");
+    } catch (e: any) {
+      setError(e.message || "Une erreur est survenue");
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -30,12 +56,14 @@ export default function LoginScreen() {
           </Text>
           {error && <Text style={authStyles.error}>{error}</Text>}
           <TextInput
+            keyboardType="email-address"
             placeholder="email"
             onChangeText={setEmail}
             value={email}
             style={authStyles.input}
           />
           <TextInput
+            secureTextEntry={true}
             placeholder="mot de pass"
             onChangeText={setPassword}
             value={password}
