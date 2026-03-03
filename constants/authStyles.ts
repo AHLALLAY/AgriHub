@@ -1,0 +1,72 @@
+import { StyleSheet } from "react-native";
+
+const COLORS = {
+  primary: "#2E7D32",
+  background: "#E8F5E9",
+  white: "#FFFFFF",
+  text: "#1B5E20",
+  placeholder: "#81C784",
+  error: "#D32F2F",
+};
+export const authStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    padding: 24,
+    backgroundColor: COLORS.background,
+  },
+  hyperText: {
+    fontSize: 28,
+    fontWeight: "bold",
+    color: COLORS.primary,
+    textAlign: "center",
+    marginBottom: 100,
+  },
+  input: {
+    backgroundColor: COLORS.white,
+    borderRadius: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 14,
+    fontSize: 16,
+    borderWidth: 1,
+    borderColor: "#C8E6C9",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.1,
+    elevation: 2,
+  },
+  button: {
+    backgroundColor: COLORS.primary,
+    borderRadius: 12,
+    paddingVertical: 16,
+    alignItems: "center",
+    marginTop: 10,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: 4,
+  },
+  textButton: {
+    color: COLORS.white,
+    fontSize: 18,
+    fontWeight: "600",
+  },
+  link: {
+    color: COLORS.primary,
+    marginTop: 20,
+    textAlign: "center",
+    fontSize: 15,
+    fontWeight: "500",
+    textDecorationLine: "underline",
+  },
+  error: {
+    color: COLORS.error,
+    marginBottom: 16,
+    textAlign: "center",
+    backgroundColor: "#FFEBEE",
+    padding: 10,
+    borderRadius: 8,
+    overflow: "hidden",
+  },
+});
