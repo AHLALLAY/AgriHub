@@ -1,5 +1,7 @@
-import { authStyles } from "@/constants/authStyles";
-import { Link } from "expo-router";
+import { auth } from "../../config/firebaseConfig";
+import { authStyles } from "../../constants/authStyles";
+import { Link, router } from "expo-router";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import {
   KeyboardAvoidingView,
@@ -10,6 +12,12 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import {
+  validateConfirmationPassword,
+  validateEmail,
+  validateFullName,
+  validatePassword,
+} from "../../utils/validation";
 
 export default function RegisterScreen() {
   const [fullName, setFullName] = useState("");
@@ -19,7 +27,48 @@ export default function RegisterScreen() {
   const [error, setError] = useState("null");
   const [loading, setLoading] = useState(false);
 
-  const handleRegister = async () => {};
+  const handleRegister = async () => {
+    setError("");
+    const fullNameError = validateFullName(fullName);
+    if (fullNameError) {
+      setError(fullNameError);
+      return;
+    }
+
+    const emailError = validateEmail(email);
+    if (emailError) {
+      setError(emailError);
+      return;
+    }
+
+    const passwordError = validatePassword(password);
+    if (passwordError) {
+      setError(passwordError);
+      return;
+    }
+
+    const confirmedPasswordError = validateConfirmationPassword(
+      password,
+      confirmedPassword,
+    );
+    if (confirmedPasswordError) {
+      setError(confirmedPasswordError);
+      return;
+    }
+    setLoading(true);
+
+    try {
+      const user = (await createUserWithEmailAndPassword(auth, email, password))
+        .user;
+      console.log("utilisateur crée : ", user.uid);
+      router.replace("/auth/login");
+    } catch (e: any) {
+      setError(e.message || "Une erreur est survenue");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
