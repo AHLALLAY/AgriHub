@@ -24,7 +24,7 @@ export default function RegisterScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmedPassword, setConfirmedPassword] = useState("");
-  const [error, setError] = useState("null");
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleRegister = async () => {
@@ -79,24 +79,28 @@ export default function RegisterScreen() {
           <Text style={authStyles.headerText}>Inscriptions</Text>
           {error && <Text style={authStyles.error}>{error}</Text>}
           <TextInput
+            keyboardType="default"
             placeholder="nom et prénom"
             onChangeText={setFullName}
             value={fullName}
             style={authStyles.input}
           />
           <TextInput
+            keyboardType="email-address"
             placeholder="email"
             onChangeText={setEmail}
             value={email}
             style={authStyles.input}
           />
           <TextInput
+            secureTextEntry={true}
             placeholder="mot de pass"
             onChangeText={setPassword}
             value={password}
             style={authStyles.input}
           />
           <TextInput
+            secureTextEntry={true}
             placeholder="confirmer le mot de pass"
             onChangeText={setConfirmedPassword}
             value={confirmedPassword}
