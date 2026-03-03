@@ -1,7 +1,9 @@
+import { authStyles } from "@/constants/authStyles";
 import { Link } from "expo-router";
 import { useState } from "react";
 import {
   KeyboardAvoidingView,
+  Platform,
   ScrollView,
   Text,
   TextInput,
@@ -19,44 +21,51 @@ export default function RegisterScreen() {
 
   const handleRegister = async () => {};
   return (
-    <KeyboardAvoidingView>
-      <ScrollView>
-        <View>
-          <Text>Soyez Bienvenue Chez AgricultureHub</Text>
-          {error && <Text style={}>{error}</Text>}
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={{ flex: 1 }}
+    >
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+        <View style={authStyles.container}>
+          <Text style={authStyles.headerText}>Inscriptions</Text>
+          {error && <Text style={authStyles.error}>{error}</Text>}
           <TextInput
             placeholder="nom et prénom"
             onChangeText={setFullName}
             value={fullName}
-            style={}
+            style={authStyles.input}
           />
           <TextInput
             placeholder="email"
             onChangeText={setEmail}
             value={email}
-            style={}
+            style={authStyles.input}
           />
           <TextInput
             placeholder="mot de pass"
             onChangeText={setPassword}
             value={password}
-            style={}
+            style={authStyles.input}
           />
           <TextInput
             placeholder="confirmer le mot de pass"
             onChangeText={setConfirmedPassword}
             value={confirmedPassword}
-            style={}
+            style={authStyles.input}
           />
           <TouchableOpacity
             onPress={handleRegister}
-            style={}
+            style={authStyles.button}
             disabled={loading}
           >
-            <Text style={}>{loading ? "en cours ..." : "connexion"}</Text>
+            <Text style={authStyles.textButton}>
+              {loading ? "en cours ..." : "connexion"}
+            </Text>
           </TouchableOpacity>
           <Link href={"/auth/login"}>
-            <Text style={}>Vous n'avez pas de compte ? S'inscrire</Text>
+            <Text style={authStyles.link}>
+              Avez-vous un compte ? connectez-vous
+            </Text>
           </Link>
         </View>
       </ScrollView>

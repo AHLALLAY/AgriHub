@@ -15,7 +15,7 @@ export const authStyles = StyleSheet.create({
     padding: 24,
     backgroundColor: COLORS.background,
   },
-  hyperText: {
+  headerText: {
     fontSize: 28,
     fontWeight: "bold",
     color: COLORS.primary,

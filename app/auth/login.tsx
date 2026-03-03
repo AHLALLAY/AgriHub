@@ -1,3 +1,4 @@
+import { authStyles } from "@/constants/authStyles";
 import { Link } from "expo-router";
 import { useState } from "react";
 import {
@@ -7,6 +8,7 @@ import {
   TouchableOpacity,
   View,
   ScrollView,
+  Platform,
 } from "react-native";
 
 export default function LoginScreen() {
@@ -17,28 +19,41 @@ export default function LoginScreen() {
 
   const handleLogin = async () => {};
   return (
-    <KeyboardAvoidingView>
-      <ScrollView>
-        <View>
-          <Text>Soyez Bienvenue Chez AgricultureHub</Text>
-          {error && <Text style={}>{error}</Text>}
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={{ flex: 1 }}
+    >
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+        <View style={authStyles.container}>
+          <Text style={authStyles.headerText}>
+            Soyez Bienvenue Chez AgricultureHub
+          </Text>
+          {error && <Text style={authStyles.error}>{error}</Text>}
           <TextInput
             placeholder="email"
             onChangeText={setEmail}
             value={email}
-            style={}
+            style={authStyles.input}
           />
           <TextInput
             placeholder="mot de pass"
             onChangeText={setPassword}
             value={password}
-            style={}
+            style={authStyles.input}
           />
-          <TouchableOpacity onPress={handleLogin} style={} disabled={loading}>
-            <Text style={}>{loading ? "en cours ..." : "connexion"}</Text>
+          <TouchableOpacity
+            onPress={handleLogin}
+            style={authStyles.button}
+            disabled={loading}
+          >
+            <Text style={authStyles.textButton}>
+              {loading ? "en cours ..." : "connexion"}
+            </Text>
           </TouchableOpacity>
           <Link href={"/auth/register"}>
-            <Text style={}>Vous n'avez pas de compte ? S'inscrire</Text>
+            <Text style={authStyles.link}>
+              Vous n'avez pas de compte ? S'inscrire
+            </Text>
           </Link>
         </View>
       </ScrollView>
