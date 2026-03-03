@@ -1,19 +1,11 @@
 import { StyleSheet } from "react-native";
-
-const COLORS = {
-  primary: "#2E7D32",
-  background: "#E8F5E9",
-  white: "#FFFFFF",
-  text: "#1B5E20",
-  placeholder: "#81C784",
-  error: "#D32F2F",
-};
+import { COLORS } from "./colors";
 export const authStyles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
     padding: 24,
-    backgroundColor: COLORS.background,
+    backgroundColor: COLORS.background.auth,
   },
   headerText: {
     fontSize: 28,
@@ -23,7 +15,7 @@ export const authStyles = StyleSheet.create({
     marginBottom: 100,
   },
   input: {
-    backgroundColor: COLORS.white,
+    backgroundColor: COLORS.background.input,
     borderRadius: 12,
     paddingHorizontal: 16,
     paddingVertical: 14,
