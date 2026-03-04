@@ -1,11 +1,40 @@
 export const COLORS = {
-  primary: "#2E7D32",
-  background: {
-    auth: "#E8F5E9",
-    drawer: "#FFFFFF",
-    input: "#FFFFFF",
+  text: {
+    primary: "#1B5E20",
+    secondary: "#2E7D32",
+    link: "#2E7D32",
+    button: "#FFFFFF",
+    input: "#1B5E20",
+    header: "#1B5E20",
+    placeholder: "#81C784",
+    success: "#2E7D32",
+    warning: "#F57C00",
+    error: "#D32F2F",
+    disabled: "#9E9E9E",
+    menuItem: "#1B5E20",
+    menuItemActive: "#2E7D32",
   },
-  text: "#1B5E20",
-  placeholder: "#81C784",
-  error: "#D32F2F",
+  background: {
+    primary: "#E8F5E9",
+    secondary: "#FFFFFF",
+    button: "#2E7D32",
+    success: "#E8F5E9",
+    warning: "#FFF3E0",
+    error: "#FFEBEE",
+    disabled: "#E0E0E0",
+    menu: "#FFFFFF",
+    menuActive: "#E8F5E9",
+  },
+  border: {
+    input: "#C8E6C9",
+    card: "#E0E0E0",
+    divider: "#E0E0E0",
+    focus: "#2E7D32",
+  },
+  hover: {
+    button: "#1B5E20",
+  },
+  shadow: {
+    default: "#000000",
+  },
 };
