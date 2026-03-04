@@ -19,6 +19,7 @@ export const authStyles = StyleSheet.create({
     borderRadius: 12,
     paddingHorizontal: 16,
     paddingVertical: 14,
+    marginBottom: 6,
     fontSize: 16,
     borderWidth: 1,
     borderColor: COLORS.border.input,
