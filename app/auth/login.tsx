@@ -36,7 +36,7 @@ export default function LoginScreen() {
     try {
       const user = (await signInWithEmailAndPassword(auth, email, password))
         .user;
-      console.log("utilisateur connecter : ", user.uid);
+      console.log("utilisateur connecté : ", user.uid);
       router.replace("/(main)");
     } catch (e: any) {
       setError(e.message || "Une erreur est survenue");
@@ -64,7 +64,7 @@ export default function LoginScreen() {
           />
           <TextInput
             secureTextEntry={true}
-            placeholder="mot de pass"
+            placeholder="mot de passe"
             onChangeText={setPassword}
             value={password}
             style={authStyles.input}
@@ -80,7 +80,7 @@ export default function LoginScreen() {
           </TouchableOpacity>
           <Link href={"/auth/register"}>
             <Text style={authStyles.link}>
-              Vous n'avez pas de compte ? S'inscrire
+              {"Vous n'avez pas de compte ? S'inscrire"}
             </Text>
           </Link>
         </View>

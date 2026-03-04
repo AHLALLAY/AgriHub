@@ -60,7 +60,7 @@ export default function RegisterScreen() {
     try {
       const user = (await createUserWithEmailAndPassword(auth, email, password))
         .user;
-      console.log("utilisateur crée : ", user.uid);
+      console.log("utilisateur créé : ", user.uid);
       router.replace("/auth/login");
     } catch (e: any) {
       setError(e.message || "Une erreur est survenue");
@@ -94,14 +94,14 @@ export default function RegisterScreen() {
           />
           <TextInput
             secureTextEntry={true}
-            placeholder="mot de pass"
+            placeholder="mot de passe"
             onChangeText={setPassword}
             value={password}
             style={authStyles.input}
           />
           <TextInput
             secureTextEntry={true}
-            placeholder="confirmer le mot de pass"
+            placeholder="confirmer le mot de passe"
             onChangeText={setConfirmedPassword}
             value={confirmedPassword}
             style={authStyles.input}
@@ -112,12 +112,12 @@ export default function RegisterScreen() {
             disabled={loading}
           >
             <Text style={authStyles.textButton}>
-              {loading ? "en cours ..." : "connexion"}
+              {loading ? "en cours ..." : "s'inscrire"}
             </Text>
           </TouchableOpacity>
           <Link href={"/auth/login"}>
             <Text style={authStyles.link}>
-              Avez-vous un compte ? connectez-vous
+              Avez-vous un compte ? Connectez-vous
             </Text>
           </Link>
         </View>
