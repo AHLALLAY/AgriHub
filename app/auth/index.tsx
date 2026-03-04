@@ -1,5 +1,5 @@
-import { router } from "expo-router";
+import { Redirect } from "expo-router";
 
 export default function AuthIndexScreen() {
-  return router.push('/auth/login')
+  return <Redirect href="/auth/login" />
 }
