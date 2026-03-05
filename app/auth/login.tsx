@@ -13,6 +13,7 @@ import {
 } from "react-native";
 import { validateEmail, validatePassword } from "../../utils/validation";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { sharedStyles } from "@/constants/sharedStyles";
 
 export default function LoginScreen() {
   const [email, setEmail] = useState("");
@@ -71,10 +72,10 @@ export default function LoginScreen() {
           />
           <TouchableOpacity
             onPress={handleLogin}
-            style={authStyles.button}
+            style={sharedStyles.button}
             disabled={loading}
           >
-            <Text style={authStyles.textButton}>
+            <Text style={sharedStyles.buttonText}>
               {loading ? "en cours ..." : "connexion"}
             </Text>
           </TouchableOpacity>

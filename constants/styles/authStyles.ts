@@ -28,23 +28,6 @@ export const authStyles = StyleSheet.create({
     shadowOpacity: 0.1,
     elevation: 2,
   },
-  button: {
-    backgroundColor: COLORS.background.button,
-    borderRadius: 12,
-    paddingVertical: 16,
-    alignItems: "center",
-    marginTop: 10,
-    shadowColor: COLORS.shadow.default,
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 3,
-    elevation: 4,
-  },
-  textButton: {
-    color: COLORS.text.button,
-    fontSize: 18,
-    fontWeight: "600",
-  },
   link: {
     color: COLORS.text.link,
     marginTop: 20,

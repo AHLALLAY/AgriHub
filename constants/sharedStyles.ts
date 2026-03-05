@@ -47,4 +47,17 @@ export const sharedStyles = StyleSheet.create({
     color: COLORS.text.input,
     backgroundColor: COLORS.background.secondary,
   },
+  button: {
+    backgroundColor: COLORS.background.button,
+    borderRadius: 12,
+    paddingVertical: 14,
+    paddingHorizontal: 20,
+    alignItems: "center",
+    marginTop: 8,
+  },
+  buttonText: {
+    color: COLORS.text.button,
+    fontSize: 16,
+    fontWeight: "600",
+  },
 });
