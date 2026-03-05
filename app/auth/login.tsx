@@ -1,5 +1,5 @@
 import { auth } from "../../config/firebaseConfig";
-import { authStyles } from "../../constants/authStyles";
+import { authStyles } from "../../constants/styles/authStyles";
 import { Link, router } from "expo-router";
 import { useState } from "react";
 import {

@@ -1,5 +1,5 @@
 import { Link } from "expo-router";
-import { modalStyles } from "@/constants/modalStyle";
+import { modalStyles } from "@/constants/styles/modalStyle";
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
 

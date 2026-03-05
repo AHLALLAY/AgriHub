@@ -1,6 +1,7 @@
 import { ScrollView, Text, View } from "react-native";
 import { getAuth } from "firebase/auth";
-import { dashboardStyle } from "../../constants/dashboardStyle";
+import { sharedStyles } from "../../constants/sharedStyles";
+import { dashboardStyle } from "../../constants/styles/dashboardStyle";
 import { RecolteItem } from "../../types/recolte";
 
 export default function DashboardScreen() {
@@ -14,8 +15,8 @@ export default function DashboardScreen() {
   const lastRecoltes: RecolteItem[] = [];
   return (
     <ScrollView
-      style={dashboardStyle.container}
-      contentContainerStyle={dashboardStyle.content}
+      style={sharedStyles.container}
+      contentContainerStyle={sharedStyles.content}
       showsVerticalScrollIndicator={false}
     >
       <Text style={dashboardStyle.welcome}>
@@ -36,8 +37,8 @@ export default function DashboardScreen() {
           <Text style={dashboardStyle.kpiValue}>{rendementMoyenKg}</Text>
         </View>
       </View>
-      <View style={dashboardStyle.section}>
-        <Text style={dashboardStyle.sectionTitle}>Dernières récoltes</Text>
+      <View style={sharedStyles.section}>
+        <Text style={sharedStyles.sectionTitle}>Dernières récoltes</Text>
         {lastRecoltes.length === 0 ? (
           <View style={dashboardStyle.emptyState}>
             <Text style={dashboardStyle.emptyText}>

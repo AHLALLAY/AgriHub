@@ -1,14 +1,7 @@
 import { StyleSheet } from "react-native";
 import { COLORS } from "./colors";
+
 export const dashboardStyle = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: COLORS.background.primary,
-  },
-  content: {
-    padding: 16,
-    paddingBottom: 32,
-  },
   welcome: {
     fontSize: 22,
     fontWeight: "700",
@@ -45,19 +38,6 @@ export const dashboardStyle = StyleSheet.create({
     color: COLORS.text.secondary,
     marginTop: 4,
     textAlign: "center",
-  },
-  section: {
-    backgroundColor: COLORS.background.secondary,
-    borderRadius: 12,
-    padding: 16,
-    borderWidth: 1,
-    borderColor: COLORS.border.card,
-  },
-  sectionTitle: {
-    fontSize: 16,
-    fontWeight: "600",
-    color: COLORS.text.primary,
-    marginBottom: 12,
   },
   emptyState: {
     paddingVertical: 20,
