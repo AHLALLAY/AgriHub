@@ -1,7 +1,7 @@
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export function validateFullName(fullName: string): string | null {
-    if (!fullName.trim()) return "Le nom et le prènom sont requis";
+    if (!fullName.trim()) return "Le nom et le prénom sont requis";
     return null;
 }
 

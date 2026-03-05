@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { COLORS } from "./colors";
+import { COLORS } from "../colors";
 export const authStyles = StyleSheet.create({
   container: {
     flex: 1,
