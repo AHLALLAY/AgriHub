@@ -59,8 +59,8 @@ export default function Layout() {
         <Drawer.Screen
           name="profiles/index"
           options={{
-            drawerLabel: "Mon Profile",
-            title: "Profile",
+            drawerLabel: "Mon Profil",
+            title: "Profil",
           }}
         />
       </Drawer>
