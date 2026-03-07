@@ -19,6 +19,7 @@ import {
   validateZone,
   validatePeriod,
 } from "../../../utils/parcellesValidation";
+import { createParcelle } from "../../../services/parcellesService";
 
 export default function ModaleParcelleScreen() {
   const [name, setName] = useState("");
@@ -33,7 +34,7 @@ export default function ModaleParcelleScreen() {
 
   const user = getAuth().currentUser;
 
-  const addParcelles = () => {
+  const addParcelles = async () => {
     setError("");
     setLoading(true);
 
@@ -69,11 +70,25 @@ export default function ModaleParcelleScreen() {
       setLoading(false);
       return;
     }
-    setLoading(false);
+
+    if (!user?.uid) {
+      setError("Vous devez être connecté.");
+      setLoading(false);
+      return;
+    }
+
     try {
-      // createParcelles();
+      await createParcelle(user.uid, {
+        nom: name.trim(),
+        surface: area,
+        typeCulture: type.trim(),
+        zone,
+        startPeriod: start,
+        endPeriod: end,
+      });
+      router.back();
     } catch (e: any) {
-      setError(e.message || "");
+      setError(e.message || "Erreur lors de l'ajout.");
     } finally {
       setLoading(false);
     }
@@ -138,6 +153,19 @@ export default function ModaleParcelleScreen() {
           </View>
           <View style={sharedStyles.fieldContainer}>
             <Text style={sharedStyles.label}>Période</Text>
+            <Text
+              style={[
+                sharedStyles.label,
+                {
+                  fontSize: 12,
+                  fontStyle: "italic",
+                  opacity: 0.8,
+                  marginBottom: 8,
+                },
+              ]}
+            >
+              Les dates doivent suivre le format aaaa-mm-jj
+            </Text>
             <View style={sharedStyles.section}>
               <Text style={sharedStyles.label}>du</Text>
               <TextInput
