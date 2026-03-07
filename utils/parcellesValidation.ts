@@ -25,8 +25,12 @@ export function validatePeriod(start: Date, end: Date): string | null {
   if (end < start) {
     return "La date de fin doit être supérieure à celle de début";
   }
-  if (start >= new Date()) {
-    return "La date de démarrage doit être supérieure au égale à aujourd'hui";
+
+  if (
+    new Date(start).setHours(0, 0, 0, 0) <
+    new Date(new Date()).setHours(0, 0, 0, 0)
+  ) {
+    return "La date de démarrage doit être supérieure ou égale à aujourd'hui";
   }
   return null;
 }
