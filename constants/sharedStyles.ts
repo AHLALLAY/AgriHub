@@ -60,4 +60,13 @@ export const sharedStyles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "600",
   },
+  error: {
+    color: COLORS.text.error,
+    marginBottom: 16,
+    textAlign: "center",
+    backgroundColor: COLORS.background.error,
+    padding: 10,
+    borderRadius: 8,
+    overflow: "hidden",
+  },
 });

@@ -36,13 +36,4 @@ export const authStyles = StyleSheet.create({
     fontWeight: "500",
     textDecorationLine: "underline",
   },
-  error: {
-    color: COLORS.text.error,
-    marginBottom: 16,
-    textAlign: "center",
-    backgroundColor: COLORS.background.error,
-    padding: 10,
-    borderRadius: 8,
-    overflow: "hidden",
-  },
 });
