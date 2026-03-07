@@ -11,7 +11,7 @@ import {
   ScrollView,
   Platform,
 } from "react-native";
-import { validateEmail, validatePassword } from "../../utils/validation";
+import { validateEmail, validatePassword } from "../../utils/authValidation";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { sharedStyles } from "@/constants/sharedStyles";
 
@@ -55,7 +55,7 @@ export default function LoginScreen() {
           <Text style={authStyles.headerText}>
             Soyez Bienvenue Chez AgricultureHub
           </Text>
-          {error && <Text style={authStyles.error}>{error}</Text>}
+          {error && <Text style={sharedStyles.error}>{error}</Text>}
           <TextInput
             keyboardType="email-address"
             placeholder="email"

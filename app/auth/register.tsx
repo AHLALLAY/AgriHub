@@ -1,7 +1,7 @@
 import { auth } from "../../config/firebaseConfig";
 import { authStyles } from "../../constants/styles/authStyles";
 import { Link, router } from "expo-router";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useState } from "react";
 import {
   KeyboardAvoidingView,
@@ -17,7 +17,8 @@ import {
   validateEmail,
   validateFullName,
   validatePassword,
-} from "../../utils/validation";
+} from "../../utils/authValidation";
+import { sharedStyles } from "@/constants/sharedStyles";
 
 export default function RegisterScreen() {
   const [fullName, setFullName] = useState("");
@@ -60,6 +61,7 @@ export default function RegisterScreen() {
     try {
       const user = (await createUserWithEmailAndPassword(auth, email, password))
         .user;
+      await updateProfile(user, { displayName: fullName })
       console.log("utilisateur créé : ", user.uid);
       router.replace("/auth/login");
     } catch (e: any) {
@@ -77,7 +79,7 @@ export default function RegisterScreen() {
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <View style={authStyles.container}>
           <Text style={authStyles.headerText}>Inscriptions</Text>
-          {error && <Text style={authStyles.error}>{error}</Text>}
+          {error && <Text style={sharedStyles.error}>{error}</Text>}
           <TextInput
             keyboardType="default"
             placeholder="nom et prénom"
@@ -108,10 +110,10 @@ export default function RegisterScreen() {
           />
           <TouchableOpacity
             onPress={handleRegister}
-            style={authStyles.button}
+            style={sharedStyles.button}
             disabled={loading}
           >
-            <Text style={authStyles.textButton}>
+            <Text style={sharedStyles.buttonText}>
               {loading ? "en cours ..." : "s'inscrire"}
             </Text>
           </TouchableOpacity>
